@@ -150,7 +150,7 @@ public class TokenStore {
 
 	public Token acquireToken(YggdrasilUser user, @Nullable String clientToken, @Nullable YggdrasilCharacter selectedCharacter) {
 		var token = new Token();
-		token.accessToken = randomUnsignedUUID().substring(0, 16);
+		token.accessToken = randomUnsignedUUID();
 		if (selectedCharacter == null) {
 			if (user.getCharacters().size() == 1) {
 				token.boundCharacter = of(user.getCharacters().get(0));
