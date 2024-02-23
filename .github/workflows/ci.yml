@@ -11,6 +11,9 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: 11
+    - uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: 6.5
     - run: ./build_test.sh
     - uses: actions/upload-artifact@v2
       with:
